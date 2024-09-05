@@ -4,7 +4,7 @@ services:
     container_name: win11
     environment:
       VERSION: "win11"
-      RAM_SIZE: "8G"
+      RAM_SIZE: "5G"
       CPU_CORES: "8"
       DISK_SIZE: "64G"
       USERNAME: "tmather"
@@ -27,7 +27,7 @@ services:
     container_name: winsrv-2022
     environment:
       VERSION: "2022"
-      RAM_SIZE: "8G"
+      RAM_SIZE: "5G"
       CPU_CORES: "8"
       DISK_SIZE: "64G"
       USERNAME: "tmather"
@@ -49,7 +49,7 @@ services:
     container_name: tiny11
     environment:
       VERSION: "tiny11"
-      RAM_SIZE: "8G"
+      RAM_SIZE: "5G"
       CPU_CORES: "8"
       DISK_SIZE: "64G"
       USERNAME: "tmather"
