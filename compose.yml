@@ -1,9 +1,14 @@
 services:
-  windows:
+  win11:
     image: dockurr/windows
     container_name: windows
     environment:
       VERSION: "win11"
+      RAM_SIZE: "8G"
+      CPU_CORES: "8"
+      DISK_SIZE: "128G"
+      USERNAME: "tmather"
+      PASSWORD: "Th@nhy99"
     devices:
       - /dev/kvm
     cap_add:
@@ -13,3 +18,28 @@ services:
       - 3389:3389/tcp
       - 3389:3389/udp
     stop_grace_period: 2m
+    volumes:
+     -  /home/tmather/Downloads/en-us_windows_11_business_editions_version_23h2_updated_aug_2024_x64_dvd_4b6aa6b4.iso:/custom.iso
+     -  /home/tmather:/shared
+
+  winsrv:
+    image: dockurr/windows
+    container_name: winsrv-2022
+    environment:
+      VERSION: "2022"
+      RAM_SIZE: "8G"
+      CPU_CORES: "8"
+      DISK_SIZE: "128G"
+      USERNAME: "tmather"
+      PASSWORD: "Th@nhy99"
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8007:8006
+      - 3390:3389/tcp
+      - 3390:3389/udp
+    stop_grace_period: 2m
+    volumes:
+     -  /home/tmather/Downloads/en-us_windows_server_2022_updated_aug_2024_x64_dvd_17b2bb17.iso:/custom.iso
