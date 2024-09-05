@@ -43,7 +43,6 @@ services:
     stop_grace_period: 2m
     volumes:
      -  /home/tmather/Downloads/en-us_windows_server_2022_updated_aug_2024_x64_dvd_17b2bb17.iso:/custom.iso
-     -  /home/tmather:/shared
 
   tiny11:
     image: dockurr/windows
@@ -66,5 +65,4 @@ services:
     stop_grace_period: 2m
     volumes:
      -  /home/tmather/Downloads/tiny11_2311_x64.iso:/custom.iso
-     -  /home/tmather:/shared
 
