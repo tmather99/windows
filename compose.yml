@@ -4,7 +4,7 @@ services:
     container_name: win11
     environment:
       VERSION: "win11"
-      RAM_SIZE: "5G"
+      RAM_SIZE: "8G"
       CPU_CORES: "8"
       DISK_SIZE: "64G"
       USERNAME: "tmather"
@@ -27,7 +27,7 @@ services:
     container_name: winsrv-2022
     environment:
       VERSION: "2022"
-      RAM_SIZE: "5G"
+      RAM_SIZE: "8G"
       CPU_CORES: "8"
       DISK_SIZE: "64G"
       USERNAME: "tmather"
@@ -49,7 +49,7 @@ services:
     container_name: tiny11
     environment:
       VERSION: "tiny11"
-      RAM_SIZE: "5G"
+      RAM_SIZE: "8G"
       CPU_CORES: "8"
       DISK_SIZE: "64G"
       USERNAME: "tmather"
@@ -65,4 +65,48 @@ services:
     stop_grace_period: 2m
     volumes:
      -  /home/tmather/Downloads/tiny11_2311_x64.iso:/custom.iso
+
+  winsrv2025:
+    image: dockurr/windows
+    container_name: winsrv2025
+    environment:
+      VERSION: "2025"
+      RAM_SIZE: "8G"
+      CPU_CORES: "8"
+      DISK_SIZE: "64G"
+      USERNAME: "tmather"
+      PASSWORD: "Th@nhy99"
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8009:8006
+      - 3392:3389/tcp
+      - 3392:3389/udp
+    stop_grace_period: 2m
+    volumes:
+     -  /home/tmather/Downloads/en-us_windows_server_2025_x64_dvd_b7ec10f3.iso:/custom.iso
+
+  win1120h2:
+    image: dockurr/windows
+    container_name: win1120h2
+    environment:
+      VERSION: "11e"
+      RAM_SIZE: "8G"
+      CPU_CORES: "8"
+      DISK_SIZE: "64G"
+      USERNAME: "tmather"
+      PASSWORD: "Th@nhy99"
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8010:8006
+      - 3393:3389/tcp
+      - 3393:3389/udp
+    stop_grace_period: 2m
+    volumes:
+     -  /home/tmather/Downloads/en-us_windows_11_business_editions_version_24h2_x64_dvd_59a1851e.iso:/custom.iso
 
